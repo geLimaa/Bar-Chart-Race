@@ -17,8 +17,10 @@ void UserOutput::drawChart(BarChart chart){
     std::cout << std::setw(20) << std::left << bar.bar_name;
     
     for(int i = 0; i < width; i++){
-      std::cout << "█";
+      std::cout << chart.getColor(bar.bar_category) << "█";
     }
+
+    std::cout << "\033[0m";
 
     std::cout << " " << bar.bar_value;
     std::cout << "\n";
